@@ -6,6 +6,11 @@
   font-family: "Roboto", sans-serif;
 }
 
+body {
+  min-width: 100vw;
+  overflow-x: hidden;
+}
+
 nav {
   height: 80px;
   display: flex;
@@ -74,7 +79,7 @@ li {
 }
 
 header {
-  height: calc(100vh - 80px);
+  height: calc(100vh - 60px);
 }
 
 .header__container {
@@ -118,6 +123,7 @@ button:active {
 .btn {
   background-color: #7342d6;
   color: white;
+  margin-bottom: 100px;
   padding: 12px 24px;
   font-size: 20px;
   border-radius: 4px;
@@ -148,28 +154,32 @@ HIGHLIGHTS
   position: relative;
 }
 
-#highlights:before {
-  background: url("assets/wave.svg");
-  content: "";
-  position: absolute;
-}
-
-#highlights:before {
+#highlights:before,
+#highlights::after {
   background: url("assets/wave.svg");
   content: "";
   position: absolute;
   width: 101vw;
   height: 12vw;
-  top: 1px;
   left: 0;
   z-index: 1;
   background-size: cover;
   background-repeat: no-repeat;
+}
+
+#highlights:before {
+  top: 1px;
   transform: translateY(-100%);
+}
+
+#highlights::after {
+  bottom: 1px;
+  transform: translateY(100%) rotate(180deg);
 }
 
 .highlight__wrapper {
   display: flex;
+  z-index: 2;
 }
 
 .highlight {
@@ -203,4 +213,20 @@ HIGHLIGHTS
 .highlight__subtitle {
   font-size: 20px;
   margin-bottom: 16px;
+}
+
+/* 
+
+FEATURES
+
+*/
+
+#features {
+  background-color: rgba(115, 66, 214, 0.1);
+  height: 1000px;
+}
+
+.book__img {
+  max-height: 300px;
+  width: 220px;
 }
